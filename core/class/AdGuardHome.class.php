@@ -87,6 +87,10 @@ class AdGuardHome extends eqLogic {
     public function postRemove() {
         
     }
+
+    public function updateData(){
+        
+    }
 }
 
 class AdGuardHomeCmd extends cmd {
