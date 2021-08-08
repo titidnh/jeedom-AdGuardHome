@@ -137,6 +137,7 @@ class AdGuardHome extends eqLogic {
         $processingTime->setSubType('numeric');
         $processingTime->setIsHistorized(1);
         $processingTime->setIsVisible(1);
+        $processingTime->setUnit('ms');
         $processingTime->save();
 
         $dnsQueries = $this->getCmd(null, 'dnsQueries');
@@ -180,6 +181,7 @@ class AdGuardHome extends eqLogic {
         $nbrBlockedPercentage->setIsHistorized(1);
         $nbrBlockedPercentage->setIsVisible(1);
         $nbrBlockedPercentage->setConfiguration('maxValue', 100);
+        $nbrBlockedPercentage->setUnit('%');
         $nbrBlockedPercentage->save();
     }
 
