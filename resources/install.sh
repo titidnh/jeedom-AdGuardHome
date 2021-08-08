@@ -9,9 +9,10 @@ echo "*             Installation des dépendances             *"
 echo "********************************************************"
 apt-get update
 echo 30 > ${PROGRESS_FILE}
-apt install python3 python3-pip
+apt-get install python3 python3-pip
 echo 50 > ${PROGRESS_FILE}
 pip3 install --upgrade pip
+pip3 install adguardhome
 echo 100 > ${PROGRESS_FILE}
 rm ${PROGRESS_FILE}
 echo "********************************************************"
