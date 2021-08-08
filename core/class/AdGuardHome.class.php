@@ -230,6 +230,14 @@ class AdGuardHome extends eqLogic {
             $nbrBlockedPercentageCmd->event(floor($values[4] * 100) / 100);
         }
     }
+
+    public function setState($state){              
+        $cmd = 'sudo python3 '.dirname(__FILE__) . '/../../resources/execute_cmd.py '. $this->getConfiguration("IP") .' '. $this->getConfiguration("Port") .' '. $this->getConfiguration("Username") .' '. $this->getConfiguration("Password") . ' '.$state;
+        $result = shell_exec($cmd);
+        if($result == "Done"){
+            $this->updateData();
+        }
+    }
 }
 
 class AdGuardHomeCmd extends cmd {
@@ -249,10 +257,10 @@ class AdGuardHomeCmd extends cmd {
 			$eqLogic->updateData();
         }
         if ($this->getLogicalId() == 'on') {
-           // $eqLogic->setState(1);
+            $eqLogic->setState(1);
         }
         if ($this->getLogicalId() == 'off') {
-           // $eqLogic->setState(0);
+            $eqLogic->setState(0);
         }
     }
 }
