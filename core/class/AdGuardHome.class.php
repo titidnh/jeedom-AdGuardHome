@@ -94,6 +94,9 @@ class AdGuardHome extends eqLogic {
         $state->setSubType('binary');
         $state->setIsVisible(0);
         $state->setIsHistorized(1);
+        $state->setTemplate('dashboard','prise');
+        $state->setTemplate('mobile','prise');
+        $state->setDisplay("generic_type","ENERGY_STATE");
         $state->save();
 
         $on = $this->getCmd(null, 'on');
@@ -108,6 +111,9 @@ class AdGuardHome extends eqLogic {
         $on->setSubType('other');
         $on->setIsVisible(1);
         $on->setValue($state->getId());
+        $on->setTemplate('dashboard','prise');
+        $on->setTemplate('mobile','prise');
+        $on->setDisplay("generic_type","ENERGY_ON");
         $on->save();
 
         $off = $this->getCmd(null, 'off');
@@ -122,6 +128,9 @@ class AdGuardHome extends eqLogic {
         $off->setSubType('other');
         $off->setIsVisible(1);
         $off->setValue($state->getId());
+        $off->setTemplate('dashboard','prise');
+        $off->setTemplate('mobile','prise');
+        $off->setDisplay("generic_type","ENERGY_OFF");
         $off->save();
 
         // Values
@@ -216,7 +225,7 @@ class AdGuardHome extends eqLogic {
             $nbrBlockedFilteringCmd = $this->getCmd(null, 'nbrBlockedFiltering');
             $nbrBlockedFilteringCmd->event($values[3]);
             $nbrBlockedPercentageCmd = $this->getCmd(null, 'nbrBlockedPercentage');
-            $nbrBlockedPercentageCmd->event($values[4]);
+            $nbrBlockedPercentageCmd->event(floor($values[4] * 100) / 100);
         }
     }
 }
