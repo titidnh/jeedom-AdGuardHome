@@ -12,7 +12,7 @@ echo 30 > ${PROGRESS_FILE}
 apt-get install python3 python3-pip
 echo 50 > ${PROGRESS_FILE}
 pip3 install --upgrade pip
-pip3 install adguardhome
+pip3 install -U adguardhome
 echo 100 > ${PROGRESS_FILE}
 rm ${PROGRESS_FILE}
 echo "********************************************************"

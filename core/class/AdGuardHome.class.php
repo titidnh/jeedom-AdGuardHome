@@ -89,7 +89,9 @@ class AdGuardHome extends eqLogic {
     }
 
     public function updateData(){
-        
+        $cmd = 'sudo python3 '.dirname(__FILE__) . '/../../resources/stats.py '. $this->getConfiguration("IP") .' '. $this->getConfiguration("Port") .' '. $this->getConfiguration("Username") .' '. $this->getConfiguration("Password");
+        $result = shell_exec($cmd);
+        log::add('AdGuardHome', 'debug', $result);
     }
 }
 
