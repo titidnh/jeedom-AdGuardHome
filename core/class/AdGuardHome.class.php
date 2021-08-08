@@ -235,6 +235,7 @@ class AdGuardHome extends eqLogic {
         $cmd = 'sudo python3 '.dirname(__FILE__) . '/../../resources/execute_cmd.py '. $this->getConfiguration("IP") .' '. $this->getConfiguration("Port") .' '. $this->getConfiguration("Username") .' '. $this->getConfiguration("Password") . ' '.$state;
         $result = shell_exec($cmd);
         if($result == "Done"){
+            sleep(1);
             $this->updateData();
         }
     }
