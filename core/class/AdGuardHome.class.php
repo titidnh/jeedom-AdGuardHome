@@ -146,7 +146,7 @@ class AdGuardHome extends eqLogic {
         }
         
 		$dnsQueries->setEqLogic_id($this->getId());
-		$pm25->setLogicalId('dnsQueries');
+		$dnsQueries->setLogicalId('dnsQueries');
 		$dnsQueries->setType('info');
         $dnsQueries->setSubType('numeric');
         $dnsQueries->setIsHistorized(1);
