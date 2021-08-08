@@ -161,6 +161,7 @@ class AdGuardHome extends eqLogic {
         $dnsQueries->setSubType('numeric');
         $dnsQueries->setIsHistorized(1);
         $dnsQueries->setIsVisible(1);
+        $dnsQueries->setConfiguration('maxValue', $this->getConfiguration("LimitByDay"));
         $dnsQueries->save();
 
         $nbrBlockedFiltering = $this->getCmd(null, 'nbrBlockedFiltering');
@@ -175,6 +176,7 @@ class AdGuardHome extends eqLogic {
         $nbrBlockedFiltering->setSubType('numeric');
         $nbrBlockedFiltering->setIsHistorized(1);
         $nbrBlockedFiltering->setIsVisible(1);
+        $nbrBlockedFiltering->setConfiguration('maxValue', $this->getConfiguration("LimitByDay"));
         $nbrBlockedFiltering->save();
 
         $nbrBlockedPercentage = $this->getCmd(null, 'nbrBlockedPercentage');
