@@ -244,6 +244,16 @@ class AdGuardHomeCmd extends cmd {
     }
 
     public function execute($_options = array()) {
+        $eqLogic = $this->getEqLogic();
+        if ($this->getLogicalId() == 'refresh') {
+			$eqLogic->updateData();
+        }
+        if ($this->getLogicalId() == 'on') {
+           // $eqLogic->setState(1);
+        }
+        if ($this->getLogicalId() == 'off') {
+           // $eqLogic->setState(0);
+        }
     }
 }
 
