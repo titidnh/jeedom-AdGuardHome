@@ -22,19 +22,3 @@ if (!isConnect()) {
     die();
 }
 ?>
-<form class="form-horizontal">
-    <fieldset>
-        <div class="form-group">
-            <label class="col-lg-4 control-label">{{Refresh}}</label>
-            <div class="col-lg-2">
-                <select class="configKey form-control" data-l1key="Refresh">
-                    <option value="1">1 Minute</option>
-                    <option value="5">5 Minutes</option>
-                    <option value="15">15 Minutes</option>
-                    <option value="30">30 Minutes</option>
-                    <option value="60">1 Heure</option>
-                </select>
-            </div>
-        </div>
-  </fieldset>
-</form>
