@@ -29,7 +29,10 @@ class AdGuardHome extends eqLogic {
         $return['log'] = __CLASS__ . '_update';
         $return['progress_file'] = jeedom::getTmpFolder('AdGuardHome') . '/dependance';
 		$return['state'] = 'ok';
-		
+        if (exec('pip3 list installed | grep adguardhome | wc -l') == 0){
+			$return['state'] = 'nok';
+        }
+
 		return $return;
     }
     
